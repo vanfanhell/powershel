@@ -1,0 +1,47 @@
+#Descripcion: Este script realiza una copia de respaldo hacia un bucket
+#Desarrollado: Alejandro García Solórzano
+#Fecha: 23/03/2022
+
+#"||--------------------------------------------------------------------"       
+#"||----------------------VARIABLES-------------------------------------"       
+#"||--------------------------------------------------------------------"       
+
+$portqry = "E:\Portqry\PortQryV2.exe"
+#$ipAddress = "10.216.4.162"
+
+$ports1 = "25"
+$ports2 = "443"
+
+#$ports3 = "22"
+#$ports4 = "9440"
+#$ports5 = "8443"
+#$ports6 = "5120"
+#$ports7 = "2937"
+#$ports8 = "5900"
+#$ports9 = "5901"
+#$ports10 = "5120"
+#$ports11 = "5123"
+
+$servidores = @('200.38.115.113','200.38.115.111')
+$puertos = @('25','80')
+
+
+#"||----------------------"       
+#"||----- Generales ------"       
+#"||----------------------"       
+
+function respalda(){
+
+    foreach ( $servidores in $servidores)
+    {
+
+        Write-Host "Ejecuntando en la dirección IP $servidores y en los puertos $ports1, $ports2"
+        
+      E:\Portqry\PortQry.exe -n $servidores -e $ports1 $port2
+        
+        #Write-Host "E:\Portqry\PortQry.exe -n $ipAddress  -e $ports1"
+    }
+}
+
+Write-Host "##-------------------->INICIO<-----------------------## "
+respalda 
